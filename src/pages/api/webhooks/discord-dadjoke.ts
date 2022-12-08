@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { env } from "../../../env/server.mjs";
-import { verifySignature } from "@upstash/qstash/nextjs";
 
 const discordMessage = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -37,7 +36,7 @@ const discordMessage = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default verifySignature(discordMessage);
+export default discordMessage;
 
 export const config = {
   api: {
